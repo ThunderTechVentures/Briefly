@@ -1,3 +1,5 @@
+import axios from "axios";
+
 // app/api/chat/route.js
 export async function POST(req) {
     const { query } = await req.json();
@@ -9,6 +11,23 @@ export async function POST(req) {
   
   // Mocked chatbot response function for now
   async function getChatbotResponse(query) {
-    return `You asked: "${query}", here's a mock response.`;
+    const response = await axios.post('http://127.0.0.1:5000/search',{
+    
+       "query":`${query}` },
+      {headers:{
+        'Content-Type': 'application/json',
+      }},
+    );
+    console.log(response)
+    console.log(response.data)
+    if(response.data.result){
+    return `Query: "${query}"\n Response:${response.data.result.document}`;
+
+    }
+    else
+    {
+      console.log(response.data.message)
+      return `You asked: "${query}"\n Response:${response.data.message}`
+    }
   }
   
