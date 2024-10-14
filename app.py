@@ -10,6 +10,7 @@ from sentence_transformers import SentenceTransformer
 from src.preprocess import preprocess_query
 from flask_cors import CORS
 import psutil
+import os
 
 app = Flask(__name__)
 
@@ -89,4 +90,5 @@ def search():
 
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
