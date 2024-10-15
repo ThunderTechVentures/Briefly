@@ -1,6 +1,6 @@
 from sentence_transformers import util
 
-def preprocess_query(query, documents, model, threshold=0.5, top_k=5):
+def preprocess_query(query, documents, model, threshold=0.2, top_k=5):
     """
     Preprocesses the query, encodes it, and finds the top-k most similar documents.
 
