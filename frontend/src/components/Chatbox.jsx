@@ -33,7 +33,7 @@ const Chatbox = () => {
   };
 
   return (
-    <div className="chatbox-container flex flex-col p-4 bg-gray-100 rounded-md max-w-md mx-auto h-80">
+    <div className="chatbox-container flex w-full flex-col p-4 bg-gray-100 rounded-md h-80">
       <div className="messages-container flex-grow overflow-y-auto mb-4">
         {messages.map((msg, index) => (
           <Message key={index} sender={msg.sender} message={msg.message} />
