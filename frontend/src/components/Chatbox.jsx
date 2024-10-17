@@ -1,12 +1,14 @@
 'use client'
-import { useState } from 'react';
+import React, { useState } from 'react';
 import ChatInput from './ChatInput';
 import Message from './Message';
 import { Plan } from '../app/api/plan/page';
+import ReactMarkdown from 'react-markdown';
+
 
 const Chatbox = () => {
-  const [messages, setMessages] = useState([]);
-  const [ref, setref] = useState([]);
+  const [messages, setMessages] = useState("");
+  const [ref, setref] = useState("");
 
   /*const addMessage = (message, sender) => {
     setMessages((prevMessages) => [...prevMessages, { message, sender }]);
@@ -39,7 +41,7 @@ const Chatbox = () => {
   return (
     <div className="chatbox-container flex w-full flex-col p-4 bg-gray-100 rounded-md h-80">
       <div className="messages-container flex-grow overflow-y-auto mb-4">
-       {messages}
+      <ReactMarkdown>{messages}</ReactMarkdown>
        {ref}
       </div>
       <ChatInput onSendMessage={handleSendMessage} />
