@@ -42,20 +42,6 @@ def load_data():
 load_model()
 load_data()
 
-@app.route('/memory')
-def memory_usage():
-    process = psutil.Process()  # Get the current process
-    memory_info = process.memory_info()  # Get memory info
-    memory_usage = {
-        'rss': memory_info.rss,  # Resident Set Size
-        'vms': memory_info.vms,   # Virtual Memory Size
-        'shared': memory_info.shared,
-        'text': memory_info.text,
-        'lib': memory_info.lib,
-        'data': memory_info.data,
-        'dirty': memory_info.dirty
-    }
-    return memory_usage
     
 # Health check route
 @app.route('/health', methods=['GET'])
