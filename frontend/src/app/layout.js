@@ -18,8 +18,8 @@ const geistMono = localFont({
 });
 
 export const metadata = {
-  title: "LegalEagle",
-  description: 'NeuroCure is an advanced web application for the detection and analysis of brain tumors, providing accurate insights and visualizations to assist in diagnosis and treatment decisions.',
+  title: "Briefly",
+  description: 'Briefly: Your friendly legal assistant, Briefly helps you navigate the complexities of law with ease. Whether you have questions about your rights, need assistance with legal terms, or want to understand legal processes, Briefly provides quick, accurate answers tailored to your needs. Think of it as your pocket-sized legal advisor, ready to help you tackle any legal query in a snap!',
 };
 
 export default function RootLayout({ children }) {

@@ -4,7 +4,7 @@ import { config } from 'dotenv';
 
 export async function Plan(query,dataa) {
     config();
-    const genAI = new GoogleGenerativeAI("AIzaSyDD19ZpT6eTCwzl0VfmPd2rkN_96-d9xL8"); // Load API key from environment
+    const genAI = new GoogleGenerativeAI(process.env.NEXT_PUBLIC_GEMINI); // Load API key from environment
 
     // Choose the appropriate model
     const model = genAI.getGenerativeModel({
