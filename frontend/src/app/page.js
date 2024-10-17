@@ -1,5 +1,5 @@
 // app/page.jsx
-import Chatbox from '@/components/Chatbox';
+import Chatbox from '../components/Chatbox';
 
 export default function Home() {
   return (
